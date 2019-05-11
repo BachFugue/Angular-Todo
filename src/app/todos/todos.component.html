@@ -1,9 +1,7 @@
 <h2>My Todos</h2>
-<ul class="todos">
-  <li *ngFor="let todo of todos; let i = index" [attr.data-index]="i">
-    <span>{{i + 1}}. </span><span>{{todo.todo}}</span>
-  </li>
-</ul>
+<div cdkDropList class="todo-list" (cdkDropListDropped)="drop($event)">
+  <div class="todo-box" *ngFor="let todo of todos; let i = index" cdkDrag>{{i + 1}}. {{todo.todo}}</div>
+</div>
 <!-- <div>
   <label>
     <input [(ngModel)]="todo.todo" />
