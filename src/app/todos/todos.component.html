@@ -1,7 +1,11 @@
-<span>{{todo.id}}. </span>
-<span>{{todo.todo}}</span>
-<div>
+<h2>My Todos</h2>
+<ul class="todos">
+  <li *ngFor="let todo of todos">
+    <span>{{todo.id}}. </span><span>{{todo.todo}}</span>
+  </li>
+</ul>
+<!-- <div>
   <label>
     <input [(ngModel)]="todo.todo" />
   </label>
-</div>
+</div> -->
