@@ -1,7 +1,9 @@
-<h2>My Todos</h2>
+<h2>My To-Dos</h2>
 <div cdkDropList class="todo-list" (cdkDropListDropped)="drop($event)">
-  <div class="todo-box" *ngFor="let todo of todos; let i = index" cdkDrag (click)="onSelect(todo)">{{i + 1}}. {{todo.todo}}</div>
+  <div class="todo-box" *ngFor="let todo of todos; let i = index" cdkDrag (click)="openDialogComponent();">{{i + 1}}. {{todo.todo}}</div>
 </div>
+<app-todo-detail-dialog *ngIf="showDialog"></app-todo-detail-dialog>
+
 <!-- <div>
   <label>
     <input [(ngModel)]="todo.todo" />

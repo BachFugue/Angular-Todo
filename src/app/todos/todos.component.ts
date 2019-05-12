@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 import { TODOS } from '../mock-todos';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -12,6 +12,7 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class TodosComponent implements OnInit {
   todos = TODOS;
+  showDialog = false;
 
   constructor() { }
 
@@ -19,12 +20,9 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSelect(todo: Todo) {
-  //   let dialogRef = dialog.open('', {
-  //     height: '400px',
-  //     width: '600px',
-  //   });
-  // }
+  openDialogComponent() {
+    this.showDialog = true;
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.todos, event.previousIndex, event.currentIndex);

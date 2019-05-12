@@ -8,11 +8,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
+import { TodoDetailDialogComponent } from './todo-detail-dialog/todo-detail-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent
+    TodosComponent,
+    TodoDetailDialogComponent
   ],
   imports: [
     BrowserModule,
